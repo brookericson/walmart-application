@@ -11,7 +11,7 @@ class Recommendations extends Component {
 
     componentDidMount(){
         const itemId = this.props.itemId;
-        const url = "http://api.walmartlabs.com/v1/nbp?apiKey=gtcgtdg945mwxj4ywafatz2w&itemId=" + itemId;
+        const url = "https://api.walmartlabs.com/v1/nbp?apiKey=gtcgtdg945mwxj4ywafatz2w&itemId=" + itemId;
         Request.get(url,{
             headers: {
                 "Accept": "application/json"
