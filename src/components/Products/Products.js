@@ -46,8 +46,8 @@ class Products extends Component {
 
         return (
             <div>
-                <div class="top-container">
-                    <img src="logo.png" alt="icon" class="logo"></img>
+                <div className="top-container">
+                    <img src="logo.png" alt="icon" className="logo"></img>
                     <input onKeyUp={this.handleChange} type="text" name="search" id="search" placeholder="Search"></input>
                 </div>
                 <div className="page-description"><h2>Search for an Item</h2></div>
