@@ -12,14 +12,18 @@ class Products extends Component {
 
     handleChange = ({ target }) => {
         const searchValue = target.value;
-        const url = "https://api.walmartlabs.com/v1/search?query=" + searchValue + "&format=json&apiKey=qm48te6cvansa89xfqhhxun3";
-        // const url = "http://api.walmartlabs.com/v1/search?apiKey=gtcgtdg945mwxj4ywafatz2w&query=" + searchValue + "&numItems=10";
-        Request.get(url).then((response) => {
-            this.setState({
-                products: response.body.items,
-                showProducts: true
-            });
-        });
+       const url = "https://api.walmartlabs.com/v1/search?apiKey=gtcgtdg945mwxj4ywafatz2w&query=" + searchValue + "&numItems=10";
+       Request.get(url,{
+            headers: {
+                "Accept": "application/json"
+            }
+        }).then((response) => {
+           this.setState({
+               products: response.body.items,
+               showProducts: true
+           })
+       });
+
         console.log(this.state.products);
     }
 
